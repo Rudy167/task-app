@@ -1,5 +1,5 @@
 # task-app
-Stack used : MEAN
+Stack used : MEAN</br>
 Folder-Structure: </br>
 `front End` contains angular assets</br>
 `example` contains sample screenshots</br>
