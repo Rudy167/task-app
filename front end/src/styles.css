@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '~font-awesome/css/font-awesome.css';
+/* You can add global styles to this file, and also import other style files */
+body{
+    --tw-bg-opacity: 1;
+    background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
+    margin-bottom:100px;
+}
