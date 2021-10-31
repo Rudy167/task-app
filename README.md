@@ -10,7 +10,7 @@ Future-Scope: backend is ready, front end is ~50%, dockerising the assets
 
 
 Dependencies:
-Angular CLI, Node, npm, yarn, mongodb (all latest stable versions)
+<Strong>Angular CLI, Node, npm, yarn, mongodb (all latest stable versions)</Strong>
 
 Steps to run:
 1. navigate to `font end`folder
