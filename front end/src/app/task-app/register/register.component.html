@@ -8,7 +8,7 @@
                         <div class="form-group mt-2">
                             <label for="inputName" [ngClass]="{'required': checkField(registerForm.get('name')) }">Name
                                 *</label>
-                            <input type="text" [ngClass]="{'required': checkField(registerForm.get('email')) }"
+                            <input type="text" [ngClass]="{'required': checkField(registerForm.get('name')) }"
                                 class="form-control rounded" id="inputName" aria-describedby="nameHelp"
                                 placeholder="Enter your name" formControlName="name">
                         </div>
