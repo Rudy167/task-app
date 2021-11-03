@@ -27,7 +27,7 @@ const readAllTask = catchAsync(async (req, res) => {
 });
 
 const deleteTask = catchAsync(async (req, res) => {
-  await taskService.deleteTaskById(req.body.taskID);
+  await taskService.deleteTaskById(req.params.taskID);
   res.status(httpStatus.NO_CONTENT).send();
 });
 

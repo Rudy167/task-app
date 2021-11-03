@@ -44,19 +44,15 @@ const updateTask = {
             .max(30).required(),
         taskDescription: Joi.string().required(),
         taskPriority: Joi.string(),
-        isTaskComplete: Joi.string(),
-        taskCreatedBy: Joi.string().required(),
+        isTaskComplete: Joi.boolean(),
+        taskCreatedBy: Joi.string(),
+        taskDeadline: Joi.date()
 
 
 
     }).with('taskName', 'taskDescription')
 }
 
-const deleteTask = {
-    body: Joi.object().keys({
-        taskID: Joi.string().alphanum().custom(objectId).required()
-    })
-}
 
 
 
@@ -65,8 +61,7 @@ module.exports = {
     createTask,
     readTask,
     readAllTask,
-    updateTask,
-    deleteTask
+    updateTask
 
 
 

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-danger" (click)=onClick($event)> <i class="fa fa-4x fa-sign-out" aria-hidden="true"></i>
+    </button>
+</div>
+
+<div class="row">
+
+  <div class="col-md-9 mt-2">
+
+    <p *ngIf="!hasItems(items$ | async)" class="alert alert-warning mt-2" role="alert">
+      <Strong>You don't have any items.</Strong><br>
+      Try adding one.
+    </p>
+
+    <app-items-list></app-items-list>
+  </div>
+
+  <div class="col-md-3 h-full">
+    <app-item-add-edit></app-item-add-edit>
+  </div>
+
+</div>
+
+</div>

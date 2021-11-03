@@ -22,8 +22,8 @@ router
     .route('/update/:taskID')
     .put(auth('updateTask'), validate(taskValidation.updateTask), taskController.updateTask);
 router
-    .route('/delete')
-    .delete(auth('deleteTask'), validate(taskValidation.deleteTask), taskController.deleteTask);
+    .route('/delete/:taskID')
+    .delete(auth('deleteTask'), taskController.deleteTask);
 
 
 

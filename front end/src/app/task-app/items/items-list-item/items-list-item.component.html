@@ -1,0 +1,52 @@
+<div   class="col-sm-3 list-group-item bg-yellow" style="display:inline"
+  style="margin-bottom:10px;height:356px;width:316px;border:2px solid black;border-radius:8px;" *ngIf="item"
+  [ngClass]="{'bg-red':item.taskPriority =='High','bg-yellow':item.taskPriority =='Medium','bg-blue':item.taskPriority =='Low'}">
+
+  <form [formGroup]="updateForm">
+  
+      <input type="date" style="float:right;border-radius:8px;margin-bottom:4px" [ngClass]="{'bg-red':item.taskPriority =='High','bg-yellow':item.taskPriority =='Medium','bg-blue':item.taskPriority =='Low','bg-white':isEditing}" [disabled]="isEditing" formControlName="taskDeadline">
+     
+    <textarea [innerText]="item.taskName"
+      [ngClass]="{'bg-red':item.taskPriority =='High','bg-yellow':item.taskPriority =='Medium','bg-blue':item.taskPriority =='Low','bg-white':isEditing}"
+      style="line-height:16px;font-weight: bold;font-size: 22px;width:280px" class="bg-red" [readonly]="!isEditing"
+      formControlName="taskName">
+
+  </textarea>
+    <div class="form-check">
+      <input class="form-check-input" formControlName="isTaskComplete" type="checkbox" id="flexCheckDisabled"
+        (click)=onclick() />
+      <label class="form-check-label" for="flexCheckDisabled"> is the task done? </label>
+    </div>
+    
+
+    <hr>
+
+    <textarea [innerText]="item.taskDescription"
+      [ngClass]="{'bg-red':item.taskPriority =='High','bg-yellow':item.taskPriority =='Medium','bg-blue':item.taskPriority =='Low','bg-white':isEditing}"
+      style="height:160px;width:280px" class="bg-red" [readonly]="!isEditing" formControlName="taskDescription">
+
+    </textarea>
+    
+  </form>
+
+  <div class="row mt-6" style="padding-top:10;">
+    <div class="col-md-4 col-sm-4">
+      <button class='btn btn-light btn-block btn-custom' [ngClass]='{"bg-green":isEditing}' style="left:0;width:60px" type='button'
+        (click)="edit()"><i class="fa fa-2x fa-edit"></i>
+      </button>
+    </div>
+    <div class="col-md-4 col-sm-4 float-sm-none ">
+      <button class='btn btn-light btn-block btn-custom float-sm-none' style="left:40%;width:60px" [ngClass]='{"bg-white":isEditing}' type='button'
+      [disabled]="!isEditing" (click)="cardClick()"><i class="fa fa-2x fa-angle-double-right" ></i>
+      </button>
+    </div>
+   
+    
+    <div class="col-md-4 col-sm-4 float-right">
+      <button class='btn btn-danger btn-block btn-custom' style="right:0;width:60px" type='button' (click)="delete()"><i
+          class="fa fa-2x fa-trash" ></i></button>
+    </div>
+  </div>
+
+
+</div>

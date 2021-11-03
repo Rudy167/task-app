@@ -1,0 +1,35 @@
+<form style="border:2px solid black;padding:25px;margin-top:50%;border-radius:8px;background-color:white" [formGroup]="itemForm">
+
+    <div class="form-group">
+      <label for="inputTitle" [ngClass]="{'required': checkField(itemForm.get('taskName')) }">Task Name *</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Title" formControlName="taskName"  [ngClass]="{'required': checkField(itemForm.get('taskName')) }">
+    </div>
+
+    <div class="form-group mt-2">
+        <label for="inputDescription">Task Description*</label>
+        <input type="text" class="form-control" id="inputDescription" placeholder="taskDescription" formControlName="taskDescription">
+    </div>
+
+
+    <p class="alert alert-warning" role="alert"  *ngIf="isProcessing">
+        Please wait..
+    </p>
+
+    <div class="form-check-inline mt-4">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input m-1" value="High" name="taskPriority" formControlName="taskPriority">High
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input m-1" value="Medium" name="taskPriority" formControlName="taskPriority" checked>Medium
+        </label>
+      </div>
+      <div class="form-check-inline disabled">
+        <label class="form-check-label"> 
+          <input type="radio" class="form-check-input m-1" value="Low" name="taskPriority" formControlName="taskPriority" >Low
+        </label>
+      </div>
+
+    <button style="display:block" *ngIf="!isProcessing" type="button" class="btn btn-primary btn-block submitbutton mt-4" (click)="onSubmit($event)" [disabled]="!itemForm.valid && !isProcessing">{{getButtonText()}}</button>
+</form>

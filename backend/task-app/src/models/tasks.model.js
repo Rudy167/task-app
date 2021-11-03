@@ -37,7 +37,7 @@ const taskSchema = mongoose.Schema(
         type: String,
         required: true
       },
-      deadline:{
+      taskDeadline:{
         type: Date,
         default: new Date()
       }

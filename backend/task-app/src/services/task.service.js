@@ -46,19 +46,19 @@ const listAllTasks = async (userID) => {
 
   allTasks.sort((a, b) => {
     if (a == null)
-      return -1;
+      return 1;
     if (b == null)
-      return 1;
-
-    if (a.taskPriority == 'High' && (b.taskPriority == 'Low' || b.taskPriority == 'Medium'))
-      return 1;
-    else if (b.taskPriority == 'High' && (a.taskPriority == 'Low' || a.taskPriority == 'Medium')) {
       return -1;
-    }
-    else if (a.taskPriority == 'Medium' && b.taskPriority == 'low' || b.taskPriority == 'Medium') {
+
+    if (a.taskPriority == 'High')
+      return -1;
+    else if (b.taskPriority == 'High') {
       return 1;
     }
-    else if (b.taskPriority == 'Medium' && a.taskPriority == 'Low' || a.taskPriority == 'Medium') {
+    else if (a.taskPriority == 'Low') {
+      return 1;
+    }
+    else if (b.taskPriority == 'Low') {
       return -1;
     }
     else {

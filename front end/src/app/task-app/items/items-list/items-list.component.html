@@ -1,0 +1,12 @@
+
+
+
+  <div class="row" style="padding-right:inherit !important" *ngIf="items$ | async as items">
+  
+      <app-items-list-item style="width:unset;padding-right:inherit !Important" *ngFor="let item of items" [item]="item">
+      </app-items-list-item>
+  
+      </div>
+
+
+  

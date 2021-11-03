@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { EachProjectComponent } from './each-project/each-project.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import { CommonModule } from '@angular/common';
     AboutComponent,
     ProjectComponent,
     ContactComponent,
-    EachProjectComponent
+    EachProjectComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

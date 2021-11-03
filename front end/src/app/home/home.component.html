@@ -1,0 +1,81 @@
+<div class=" m-20 rounded-3xl flip-card">
+
+    <div class=" mobile-disappear inner bg-gray-100 rounded-3xl">
+        <div (mouseover)='typingCallback(this)' class="front">
+            <div class=" grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-2 p-10 ">
+                <div>
+                    <img class="object-cover h-48 w-full " src="../../assets/images/img5.jpg">
+                </div>
+
+
+                <div>
+                    <h2 class="text-5xl "> Hey friends — </h2>
+                    <!-- todo: make this work for mobile screen -->
+                    <p class="hidden sm:flex  p-10 italic"> I’m Amit. I’m a Software Engineer, chess and basketball
+                        player.
+                        On this site we explore the strategies and tools that help us live happier, healthier, more
+                        productive
+                        lives.</p>
+                </div>
+
+            </div>
+        </div>
+        <div (mouseout)='clear()' class="back rounded-3xl">
+            <div class=" grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-2" style="align-items:center;">
+                <div [innerHTML]=typewriter_display>
+
+
+
+                </div>
+
+                <div style="display:flex ; flex-flow: row-reverse;">
+                    <div class="section">
+                        <div class="saucer"></div>
+                        <div class="cup">
+                            <div class="cup-center">
+                                <div class="coffee"></div>
+                                <div class="froth"></div>
+                                <div class="coffee-dark-top"></div>
+                                <div class="hot-steam steam-move"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                        <div class="teaspoon">
+                            <div class="spoon-center"></div>
+                            <div class="spoon-handle"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mobile inner bg-gray-100 rounded-3xl grid grid-cols-2">
+        <div class=" grid grid-cols-3  gap-2 p-1 ">
+            <div class="col-span-3" >
+                <p class=" sm:flex p-2 italic"> I’m Amit. I’m a Software Engineer, chess and basketball
+                    player.
+                    On this site we explore the strategies and tools that help us live happier, healthier, more
+                    productive
+                    lives.</p>
+            </div>
+          
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

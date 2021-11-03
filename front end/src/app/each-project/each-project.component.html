@@ -1,0 +1,13 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white mx-10" style=" border-radius: 6px; width:350x;height:475px"  >
+    <img class="w-full" style="max-height:146px; padding:8px;"src = {{input.image}} alt="technology">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">{{input.heading}}</div>
+      <p class="text-gray-700 text-base h-32" [innerHTML]="input.content">
+
+      </p>
+    </div>
+    <div class="px-6 pt-4 pb-2 mt-4" >
+    
+      <span *ngFor='let tag of input.tags' class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{tag}}</span>
+    </div>
+  </div>

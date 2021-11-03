@@ -1,0 +1,120 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    justify-content: center;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  .Me{
+
+    font-size:25px;
+    font-weight: bold;
+  }
+  .Resume{
+    font-size:25px;
+    font-weight: bold;
+  }
+  .Name{
+      font-weight: bold;
+      font-size:50px;
+  }
+  /* .fa-download{
+      color:green;
+      cursor:pointer;
+  } */
+  .button {
+    cursor:pointer;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #2f4e30;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* .button-red:hover {background-color: red}
+
+.button-red:active {
+  background-color: #2f4e30;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button-green:hover {background-color: #3e8e41}
+
+.button-green:active {
+  background-color: #2f4e30;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+} */
+
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
