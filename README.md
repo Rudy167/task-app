@@ -45,7 +45,8 @@ register page: http://localhost:4200/register
 
 task dashboard, will be visible after you login http://localhost:4200/dashboard
 ![image](https://user-images.githubusercontent.com/29231015/140037318-63dd189f-21ed-40f2-b78f-eb688c0a9954.png)
-
+(edit mode)
+![image](https://user-images.githubusercontent.com/29231015/140038950-1a402c5b-ed2e-4193-890f-a2203f55ba08.png)
 
 
 
