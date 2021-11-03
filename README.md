@@ -1,5 +1,6 @@
 # task-app
-Stack used : MEAN</br>
+Stack used : Mongo Express Angular Node</br>
+
 Folder-Structure: </br>
 `front End` contains angular assets</br>
 `example` contains sample screenshots</br>
@@ -27,7 +28,7 @@ This wil start the angular server on port 4200
 
 Mongo server will be started locally on localhost:27017 and our node backend server will start on localhost:3000, ignore the warnings
 
-Navigate to localhost:3000/login if you are not already navigated
+Navigate to localhost:4200/login if you are not already navigated
 
 
 routes:
