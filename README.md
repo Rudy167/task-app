@@ -64,6 +64,6 @@ Uasage:
 Features:
 1) Login/Register
 2) CRUD on tasks
-3) Add Priority/Deadline
+3) Add Priority and Deadline
 
 
