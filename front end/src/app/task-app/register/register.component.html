@@ -33,7 +33,7 @@
                         </p>
                         <div class="row">
                             <button id="submitButton" class="btn btn-lg btn-primary  text-uppercase mt-4" type="button"
-                                [disabled]="!registerForm.valid || processing || isRegisterSuccess " (click)="signIn($event)">Sign In
+                                (click)="signIn($event)">Sign In
                                 Insead?</button>
                             <button class="btn btn-lg btn-success  text-uppercase mt-4 float-right" [disabled]="isRegisterSuccess" (click)=register()
                                 type="button">register</button>
