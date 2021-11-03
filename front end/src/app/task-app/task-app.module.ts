@@ -22,6 +22,7 @@ import { ItemsService } from './items/_services/items.service';
 import { AuthService } from './_auth/services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RegisterService } from './register/register.service';
     DashboardComponent,
     LogoutComponent,
     RegisterComponent,
+    ErrorComponent,
   ],
   imports: [
   

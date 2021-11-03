@@ -8,6 +8,7 @@ import { ItemModel } from '../_models/item.model';
 import { AddItemModel } from '../_models/add-item.model';
 import { UpdateItemModel } from '../_models/update-item.model';
 import { priority } from '../_models/add-item.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class ItemsService {
 
   constructor(
     private http: HttpClient,
+    private router: Router
   ) { }
 
   clear(): void {
@@ -42,13 +44,18 @@ export class ItemsService {
   }
 
   delete(id: number): Observable<any> {
-    return this.http.delete(environment['apiBaseUrl'] + '/v1/tasks/delete/' + id,{observe:'response'})
+    return this.http.delete(environment['apiBaseUrl'] + '/v1/tasks/delete/' + id, { observe: 'response' })
       .pipe(
         map(data => {
-          return (data.status==204) ? true : false;
+          return (data.status == 204) ? true : false;
         }
         ),
-        tap((success) => { if (success) { this.deleteItem(id); } }), // when success, delete the item from the local service
+        tap((success) => {
+          if (success) { this.deleteItem(id); }
+          else {
+            this.router.navigateByUrl('/error');
+          }
+        }), // when success, delete the item from the local service
         catchError((err) => {
           return of(false);
         }),
@@ -76,7 +83,9 @@ export class ItemsService {
           return (responseData['success'] && responseData['success'] === true) ? responseData['result'] : false;
         }
         ),
-        tap(item => { if (item) { this.updateItem(id, item); } }), // when success result, update the item in the local service
+        tap(item => { if (item) { this.updateItem(id, item); } else {
+          this.router.navigateByUrl('/error');
+        } }), // when success result, update the item in the local service
         catchError(err => {
           return of(false);
         }),
@@ -87,14 +96,19 @@ export class ItemsService {
     const data = JSON.parse(localStorage.getItem('usermeta'));
     payload.taskCreatedBy = data.id;
     console.log(JSON.stringify(payload) + "payload");
-    return this.http.post(environment['apiBaseUrl'] + '/v1/tasks/create', payload,  { observe: 'response' })
+    return this.http.post(environment['apiBaseUrl'] + '/v1/tasks/create', payload, { observe: 'response' })
       .pipe(
         map(responseData => {
-          console.log(responseData );
-          return (responseData.status==201) ? responseData.body : false;
+          console.log(responseData);
+          return (responseData.status == 201) ? responseData.body : false;
         }
         ),
-        tap((item  : any)=> { if (item) { this.addItem(item);  } }), // when success, add the item to the local service
+        tap((item: any) => {
+          if (item) { this.addItem(item); }
+          else {
+            this.router.navigateByUrl('/error');
+          }
+        }), // when success, add the item to the local service
         catchError(err => {
           return of(false);
         }),
@@ -117,7 +131,7 @@ export class ItemsService {
   }
 
   addItem(item: AddItemModel): void {
-   let currentItems: any = this.getAll();
+    let currentItems: any = this.getAll();
     currentItems.push(item);
     console.log(currentItems);
     currentItems.sort((a, b) => {
@@ -125,7 +139,7 @@ export class ItemsService {
         return 1;
       if (b == null)
         return -1;
-  
+
       if (a.taskPriority == 'High')
         return -1;
       else if (b.taskPriority == 'High') {
@@ -164,11 +178,11 @@ export class ItemsService {
 
     this.clear();
 
-    return this.http.get(environment['apiBaseUrl'] + '/v1/tasks/readAll',{observe:'response'})
+    return this.http.get(environment['apiBaseUrl'] + '/v1/tasks/readAll', { observe: 'response' })
       .pipe(
         map(data => {
-        
-          return (data.status==200) ? data.body : false;
+
+          return (data.status == 200) ? data.body : false;
         }
         ),
         tap((items: any) => { if (items) { this.items$.next(items); } }),
