@@ -1,5 +1,6 @@
 # task-app
-Stack used : MEAN</br>
+Stack used : Mongo Express Angular Node</br>
+
 Folder-Structure: </br>
 `front End` contains angular assets</br>
 `example` contains sample screenshots</br>
