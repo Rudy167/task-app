@@ -1,15 +1,15 @@
-FROM node:alpine
+FROM node:16.0.0
 
 RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
-WORKDIR /usr/src/node-app
+WORKDIR /usr/src/task-app
 
-COPY package.json yarn.lock ./
+COPY package.json ./
 
-USER node
+RUN npm i
 
-RUN yarn install --pure-lockfile
-
-COPY --chown=node:node . .
+COPY . .
 
 EXPOSE 3000
+
+CMD [ "yarn", "start" ]

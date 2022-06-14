@@ -87,7 +87,7 @@ export class ItemAddEditComponent implements OnInit {
       taskName: new FormControl(this.item ? this.item.taskName : '', Validators.required),
       taskDescription: new FormControl(this.item ? this.item.taskDescription : '',Validators.required),
       taskPriority: new FormControl(this.item? this.item.taskPriority : 'Medium'),
-      isTaskComplete : new FormControl("false"),
+      isTaskComplete : new FormControl("false",Validators.required),
       taskCreatedBy: new FormControl(),
     });
   }

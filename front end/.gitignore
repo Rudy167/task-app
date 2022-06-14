@@ -1,6 +1,12 @@
 # Dependencies
 node_modules
 
+dist
+
+yarn.lock
+
+pacakge-lock.json
+
 # yarn error logs
 yarn-error.log
 
